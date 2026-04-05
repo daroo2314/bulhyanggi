@@ -40,6 +40,31 @@
         .hashtag-item:hover { background: #fee2e2; border-color: #ef4444; color: #ef4444; }
     </style>
 </head>
+
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.7/kakao.min.js" integrity="sha384-tJkjbtDbvoxO+diRuDtwRO9JXR7pjWnfjfRn5ePUpl7e7RJCxKCwwnfqUAdXh53p" crossorigin="anonymous"></script>
+
+<script>
+  // 2. 앱 키로 초기화 (확인하신 JS 키)
+  Kakao.init('7a067c7d1fa99f84b13c2a2fb42c63ea');
+</script>
+
+<div id="kakao-chat-container" style="position:fixed; bottom:20px; right:20px; z-index:9999; cursor:pointer;">
+  <a href="javascript:void(0)" onclick="chatChannel()">
+    <img src="https://developers.kakao.com/tool/resource/static/img/button/channel/consult/consult_small_yellow_pc.png" 
+         alt="카카오톡 상담하기" style="width:70px; height:auto; border-radius:50%; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+  </a>
+</div>
+
+<script>
+  // 4. 버튼 클릭 시 채팅방 열기 함수
+  function chatChannel() {
+    Kakao.Channel.chat({
+      channelPublicId: '_ZjWMX' // 확인하신 채널 ID
+    });
+  }
+</script>
+
+    
 <body class="antialiased">
 
     <!-- Navigation -->
