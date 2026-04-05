@@ -42,29 +42,35 @@
     </style>
 </head>
 
-    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.7/kakao.min.js" integrity="sha384-tJkjbtDbvoxO+diRuDtwRO9JXR7pjWnfjfRn5ePUpl7e7RJCxKCwwnfqUAdXh53p" crossorigin="anonymous"></script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.7/kakao.min.js" integrity="sha384-tJkjbtDbvoxO+diRuDtwRO9JXR7pjWnfjfRn5ePUpl7e7RJCxKCwwnfqUAdXh53p" crossorigin="anonymous"></script>
 
 <script>
-  // 2. 앱 키로 초기화 (확인하신 JS 키)
+  // 2. 앱 키 초기화 (확인된 불향기 프랜차이즈 JS 키)
   Kakao.init('7a067c7d1fa99f84b13c2a2fb42c63ea');
 </script>
 
-<div id="kakao-chat-container" style="position:fixed; bottom:20px; right:20px; z-index:9999; cursor:pointer;">
-  <a href="javascript:void(0)" onclick="chatChannel()">
-    <img src="https://developers.kakao.com/tool/resource/static/img/button/channel/consult/consult_small_yellow_pc.png" 
-         alt="카카오톡 상담하기" style="width:70px; height:auto; border-radius:50%; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+<div id="kakao-chat-container" style="position:fixed; bottom:25px; right:25px; z-index:9999;">
+  <a href="javascript:chatChannel()">
+    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FTM0lB%2FdJMcaiivdfU%2FAAAAAAAAAAAAAAAAAAAAAIBtCp2d_H35GcKyrIWU0yrsBS53evE1G5EkWcR4REet%2Fimg.jpg%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1777561199%26allow_ip%3D%26allow_referer%3D%26signature%3DIS3wBm9uF0mIfLN8Gq3tmuSZuCE%253D" 
+         alt="불향기 카톡상담" 
+         style="width:75px; height:75px; border-radius:50%; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.2s ease-in-out;"
+         onmouseover="this.style.transform='scale(1.05)'" 
+         onmouseout="this.style.transform='scale(1)'">
   </a>
 </div>
 
 <script>
-  // 4. 버튼 클릭 시 채팅방 열기 함수
+  // 4. 채팅방 열기 함수 (불향기 채널 ID: _ZjWMX)
   function chatChannel() {
+    if (!Kakao.isInitialized()) {
+      console.error('카카오 SDK가 초기화되지 않았습니다.');
+      return;
+    }
     Kakao.Channel.chat({
-      channelPublicId: '_ZjWMX' // 확인하신 채널 ID
+      channelPublicId: '_ZjWMX'
     });
   }
 </script>
-
     
 <body class="antialiased">
 
